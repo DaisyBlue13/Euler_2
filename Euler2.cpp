@@ -14,5 +14,25 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 */
 
 int main() {
-    int sum = 0;
+    std::uint64_t sum = 0;
+    uint64_t fib = 0;
+    int fn1 = 1;
+    int fn2 = 1;
+    while (fib < 4000000){
+        // get fib sequence fn = fn-1 + fn-2
+        fib = fn1 + fn2;
+        fn2 = fn1;
+        fn1 = fib;
+        //cout << "fib: " << fib << endl;
+        // mod test
+        if (fib % 2 == 0){
+            sum = sum + fib;
+            //cout << sum << endl;
+        }
+
+    }
+    cout << "fib: " << fib << endl;
+    cout << "Answer: " << sum << endl;
+
+    return 0;
 }
